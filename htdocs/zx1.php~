@@ -1,0 +1,8 @@
+<?php
+foreach($_POST['product'] as $product)
+ {
+      $name = $product['name'];
+      $item = $product['item'];
+      echo$name.$item;
+ }
+?>

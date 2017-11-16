@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<title>Railway</title>
+<body bgcolor="pink"><center><b>
+<h1>Railway Reservation System</h1></b></center></br>
+<form action="Rail.php"><fieldset><legend>Indivisual Registration</legend>
+<form method="post" >
+<fieldset>
+  User ID:
+  <input type="text" name="username" required><br>
+  Password:
+  <input type="password" name="psw" required></br>
+Confirm Password:
+ <input type="password" name="psw" required></br>
+Preferred Language:
+<input list="languages" name="language" required>
+<datalist id="languages">
+<option value="Hindi">
+<option value="English">
+</datalist>
+</fieldset>
+</form>
+<form method="get">
+<fieldset><legend width="0">Personal Details</legend>
+  Full Name:
+  <input type="text" name="fullname" required></br>
+  Gender:<fieldset id="gender">
+  <input type="radio" name="gender" value="male" >Male
+  <input type="radio" name="gender" value="female"> Female
+  <input type="radio" name="gender" value="other"> Other</br>
+</fieldset>
+  Marital Status:<fieldset id="Marital status" border="0">
+   <input type="radio" name="Marital status" value="Married" >Married
+    <input type="radio" name="Marital status" value="Unmarried" >Unmarried</br></fieldset>
+ Date of Birth:
+<input type="date" value="DOB" required></br>
+Occupation:<input type="text" name="occupation" required></br>
+Aadhar Number:<input type="aadhar number" >(optional) </br>
+Country:<input type="text" name="country name" required></br>
+  Email:
+  <input type="email" value="Email" required></br>
+ Mobile Number:<input type="isd-tel" value="Mobile Number" required></br>
+</fieldset>
+</form>
+<form method="get">
+<fieldset><legend>Residental Address</legend>
+Complete Address:<input type="text"></br>
+Pin Code:<input type="number" size="6" required></br>
+City:<input type="text" required></br>
+State:<input type="text" required></br>
+</fieldset>
+</form>
+<input type="submit" value="SIGN UP"><input type="reset" value="Reset">
+</fieldset>
+</form>
+</body>
+</html>

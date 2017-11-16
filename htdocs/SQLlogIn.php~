@@ -1,0 +1,44 @@
+<?php
+$username=$_POST['username'];
+$psw=$_POST['psw'];
+$conn =mysqli_connect("localhost", "root", "", "User");
+if($conn->connect_error){
+    die("ERROR: Could not connect. " .$conn->connect_error);
+}
+$sql = "SELECT username,psw FROM User_database";
+$result = $conn->query($sql);
+if ($result->num_rows > 0)
+{
+ $c=1;
+ while($row = $result->fetch_assoc())
+ {
+       /* echo "id: " . $row["username"]. " Name: " . $row["psw"]. " " ."<br>";*/
+      if($row["username"]==$username and $row["psw"]==$psw)
+      {
+         $c=0;
+         break;
+      }
+      else
+      {
+         $c=1; 
+      }
+  }
+  if($c==0)
+  {
+     header('Location: Rail.php');
+  }
+  else
+  { 
+    /*<button name='button' value='OK' type='button' onclick='hello()'>OK</button>*/
+        echo"  <script>
+             window.alert('Invalid Username or Password');
+          </script> "    ;
+    header('refresh:0.0000000001; url=logIn.php');
+  }
+} 
+else 
+{
+    echo "0 results";
+}
+$conn->close();
+?>

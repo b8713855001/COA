@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form>
+   <a id="add_another" href="#">Add Another</a>
+   <table>
+       <tr class="product_item">
+           <td>
+               <input type="text" name="product[1][name]" value=""/>
+           </td>
+           <td>
+               <input type="text" name="product[1][item]" value=""/>
+           </td>
+       </tr>
+       <tr id="dummy">
+          <td>
+              <input type="text" name="product[0][name]" value=""/>
+          </td>
+          <td>
+              <input type="text" name="product[0][item]" value=""/>
+          </td>
+       </tr>
+   </table>
+<input type='submit' value="Book Now">
+</form>
+</body></html>

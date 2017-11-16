@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+label{display:inline-block;width:100px;margin-bottom:10px;}
+</style></head>
+<body bgcolor="pink"><center><b>
+<h1>Railway Reservation System</h1></b></center></br>
+<form method="post" action="Rail.php">
+<label>
+  User name:</label>
+  <input type="text" name="username" required><br>
+  <label>Password :</label>
+  <input type="password" name="psw" required></br>
+<input type="submit" value="LOG IN">
+</form>
+<form action="tinnet.htm" >
+<input type="submit" value="CREATE NEW ACCOUNT:">
+</form>
+</body>
+</html>

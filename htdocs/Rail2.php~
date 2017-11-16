@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<?php
+$train_no=$_POST['train_no'];
+$day=$_POST['day'];
+$date=$_POST['date'];
+$quota=$_POST['quota'];
+$name2=$_POST["data"];
+$age2=$_POST["data1"];
+$sex2=$_POST["data2"];
+$bearth2=$_POST["data3"];
+$Senior=$_POST["s_citi"];
+$link = mysqli_connect("localhost", "root", "", "User");
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+$sql="SELECT * FROM RailRes";
+$result = $link->query($sql);
+if ($result->num_rows > 0)
+{
+    echo "<table border='2'><tr colspan='7'><th colspan='7'>Ticket Reservation</th></tr>";
+     echo "<tr><th>Train Name</th><th>Train Number</th><th>From</th><th>To</th><th>Date</th><th>Quota</th></tr>";
+    while($row = $result->fetch_assoc())
+    {
+      if($row['train_no']==$train_no)      
+      {
+             echo "<tr><td>" . $row["train_name"]."</td><td>" . $row["train_no"]. "</td><td>".$row["From"]."</td><td>".$row["To"];
+                 echo "</td><td>".$date."</td><td>".$quota."</td></tr><br>";
+      }
+     }
+   echo "</table></br>";
+echo "<table border='2'><tr><th>S.No</th><th>Name</th><th>Age</th><th>Sex</th><th>Berth Preferance</th></tr>";
+       for( $i = 0; $i<6; $i++ ) {
+          if(($name2['name1'][$i])!="NULL")
+          {
+             $c=$i+1;
+             echo "<tr><th>".$c."</th><th>".$name2['name1'][$i]."</th><th>".$age2['age'][$i]."</th><th>".$sex2['sex'][$i].
+                  "</th><th>".$bearth2['berth'][$i];
+     }
+         }
+     echo "</table></br>";
+}
+$link->close();
+?>
+</body>
+</html>
